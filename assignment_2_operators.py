@@ -14,15 +14,9 @@ def arithmetic_operations(a, b):
     print("Addition:", a + b)
     print("Subtraction:", a - b)
     print("Multiplication:", a * b)
-
-    if b != 0:
-        print("Division:", a / b)
-    else:
-        print("Division: Cannot divide by zero")
-
-
-# Function call
-arithmetic_operations(10, 5)
+    print("Division:", a / b)
+   
+arithmetic_operations(20, 2)
 
 print("\n" + "=" * 50 + "\n")
 
@@ -35,19 +29,16 @@ print("2. Simulating Increment and Decrement")
 
 
 def increment_decrement(number):
-    print("Original Number:", number)
+    print("Number:", number)
 
-    # Increment
     number += 1
     print("After Increment:", number)
 
-    # Decrement
     number -= 1
     print("After Decrement:", number)
 
 
-# Function call
-increment_decrement(20)
+increment_decrement(100)
 
 print("\n" + "=" * 50 + "\n")
 
@@ -58,13 +49,13 @@ print("\n" + "=" * 50 + "\n")
 
 print("3. Check if Two Numbers are Equal")
 
-num1 = int(input("Enter first number: "))
-num2 = int(input("Enter second number: "))
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
 
-if num1 == num2:
-    print("Both numbers are equal.")
+if a == b:
+    print("Both numbers are equal")
 else:
-    print("The numbers are not equal.")
+    print("The numbers are not equal")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -92,17 +83,17 @@ print("\n" + "=" * 50 + "\n")
 
 print("5. Find Smaller and Larger Numbers")
 
-first_number = int(input("Enter first number: "))
-second_number = int(input("Enter second number: "))
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
 
-if first_number > second_number:
-    print("Larger Number:", first_number)
-    print("Smaller Number:", second_number)
-elif second_number > first_number:
-    print("Larger Number:", second_number)
-    print("Smaller Number:", first_number)
+if num1 > num2:
+    print("Larger Number:", num1)
+    print("Smaller Number:", num2)
+elif num2 > num1:
+    print("Larger Number:", num2)
+    print("Smaller Number:", num1)
 else:
-    print("Both numbers are equal.")
+    print("Both numbers are equal")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -118,13 +109,11 @@ num2 = int(input("Enter second number: "))
 num3 = int(input("Enter third number: "))
 
 if num1 >= num2 and num1 >= num3:
-    largest = num1
+    print("Largest number is:", num1)
 elif num2 >= num1 and num2 >= num3:
-    largest = num2
+    print("Largest number is:", num2)
 else:
-    largest = num3
-
-print("Largest Number:", largest)
+    print("Largest number is:", num3)
 
 print("\n" + "=" * 50 + "\n")
 
@@ -152,9 +141,9 @@ elif operator == "/":
     if number2 != 0:
         print("Result:", number1 / number2)
     else:
-        print("Cannot divide by zero.")
+        print("Cannot divide by zero")
 
 else:
-    print("Invalid operator entered.")
+    print("Invalid operator entered")
 
 print("\n" + "=" * 50 + "\n")
