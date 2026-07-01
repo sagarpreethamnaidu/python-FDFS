@@ -10,7 +10,7 @@
 print("1. Print a Message Multiple Times")
 
 for i in range(10):
-    print("Bright IT Career")
+    print("Hello This is Sagar")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -21,11 +21,11 @@ print("\n" + "=" * 50 + "\n")
 
 print("2. Print Numbers Using While Loop")
 
-number = 1
+num = 1
 
-while number <= 20:
-    print(number)
-    number += 1
+while num <= 20:
+    print(num)
+    num += 1
 
 print("\n" + "=" * 50 + "\n")
 
@@ -44,7 +44,10 @@ if num1 == num2:
 else:
     print("The numbers are not equal.")
 
-print("Using != operator:", num1 != num2)
+if num1 != num2:
+    print("The numbers are not equal.")
+else:
+    print("The numbers are equal.")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -76,15 +79,11 @@ b = int(input("Enter second number: "))
 c = int(input("Enter third number: "))
 
 if a >= b and a >= c:
-    largest = a
-
+    print("Largest number is:", a)
 elif b >= a and b >= c:
-    largest = b
-
+    print("Largest number is:", b)
 else:
-    largest = c
-
-print("Largest Number:", largest)
+    print("Largest number is:", c)
 
 print("\n" + "=" * 50 + "\n")
 
@@ -95,14 +94,14 @@ print("\n" + "=" * 50 + "\n")
 
 print("6. Even Numbers Between 10 and 20")
 
-num = 10
+i = 10
 
-while num <= 20:
+while i <= 20:
 
-    if num % 2 == 0:
-        print(num)
+    if i % 2 == 0:
+        print(i)
 
-    num += 1
+    i += 1
 
 print("\n" + "=" * 50 + "\n")
 
@@ -113,21 +112,21 @@ print("\n" + "=" * 50 + "\n")
 
 print("7. Armstrong Number Check")
 
-number = int(input("Enter a number: "))
+num = int(input("Enter a number: "))
 
-temp = number
-digits = len(str(number))
-sum_of_powers = 0
+digits = len(str(num))
+temp = num
+sum = 0
 
 while temp > 0:
     digit = temp % 10
-    sum_of_powers += digit ** digits
+    sum += digit ** digits
     temp //= 10
 
-if number == sum_of_powers:
-    print(number, "is an Armstrong number.")
+if sum == num:
+    print("Armstrong Number")
 else:
-    print(number, "is not an Armstrong number.")
+    print("Not an Armstrong Number")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -138,25 +137,21 @@ print("\n" + "=" * 50 + "\n")
 
 print("8. Prime Number Check")
 
-number = int(input("Enter a number: "))
+num = int(input("Enter a number: "))
 
-if number > 1:
-
-    is_prime = True
-
-    for i in range(2, number):
-
-        if number % i == 0:
-            is_prime = False
+if num <= 1:
+    print("Not a Prime Number")
+else:
+    prime = True
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            prime = False
             break
 
-    if is_prime:
-        print(number, "is a Prime Number.")
+    if prime:
+        print("Prime Number")
     else:
-        print(number, "is not a Prime Number.")
-
-else:
-    print(number, "is not a Prime Number.")
+        print("Not a Prime Number")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -167,12 +162,12 @@ print("\n" + "=" * 50 + "\n")
 
 print("9. Palindrome Check")
 
-number = input("Enter a number: ")
+num = input("Enter a number: ")
 
-if number == number[::-1]:
-    print(number, "is a Palindrome.")
+if num == num[::-1]:
+    print("Palindrome Number")
 else:
-    print(number, "is not a Palindrome.")
+    print("Not a Palindrome Number")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -183,12 +178,12 @@ print("\n" + "=" * 50 + "\n")
 
 print("10. Even or Odd Check")
 
-number = int(input("Enter a number: "))
+num = int(input("Enter a number: "))
 
-if number % 2 == 0:
-    print(number, "is Even.")
+if num % 2 == 0:
+    print("Even Number")
 else:
-    print(number, "is Odd.")
+    print("Odd Number")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -199,14 +194,12 @@ print("\n" + "=" * 50 + "\n")
 
 print("11. Gender Identification")
 
-gender = input("Enter gender (M/F): ").upper()
+gender = input("Enter Gender (M/F): ")
 
-if gender == "M":
+if gender == 'M' or gender == 'm':
     print("Male")
-
-elif gender == "F":
+elif gender == 'F' or gender == 'f':
     print("Female")
-
 else:
     print("Invalid Input")
 
@@ -219,10 +212,10 @@ print("\n" + "=" * 50 + "\n")
 
 print("12. Multiplication Table Generator")
 
-number = int(input("Enter a number: "))
+num = int(input("Enter a number: "))
 
 for i in range(1, 11):
-    print(f"{number} x {i} = {number * i}")
+    print(f"{num} x {i} = {num * i}")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -233,20 +226,17 @@ print("\n" + "=" * 50 + "\n")
 
 print("13. Count Digits in a Number")
 
-number = int(input("Enter a number: "))
+num = int(input("Enter a number: "))
 
 count = 0
 
-temp = abs(number)
-
-if temp == 0:
+if num == 0:
     count = 1
-
 else:
-    while temp > 0:
-        temp //= 10
+    while num != 0:
         count += 1
+        num //= 10
 
-print("Number of Digits:", count)
+print("Number of digits:", count)
 
 print("\n" + "=" * 50 + "\n")
