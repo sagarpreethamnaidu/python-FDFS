@@ -2,9 +2,7 @@
 # Assignment-4: Lists (Arrays) in Python
 # =========================================================
 
-numbers = [10, 20, 30, 40, 50, 20, 10, 60, 70]
-list1 = [1, 2, 3, 4, 5]
-list2 = [4, 5, 6, 7, 8]
+
 
 
 # =========================================================
@@ -14,11 +12,14 @@ list2 = [4, 5, 6, 7, 8]
 print("1. Sum of Elements")
 
 
-def sum_of_elements(lst):
-    return sum(lst)
+def sum_elements(lst):
+    total = 0
+    for num in lst:
+        total += num
+    return total
 
-
-print("Sum:", sum_of_elements(numbers))
+nums = [10, 20, 30, 40]
+print(sum_elements(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -30,11 +31,14 @@ print("\n" + "=" * 50 + "\n")
 print("2. Average of Elements")
 
 
-def average_of_elements(lst):
-    return sum(lst) / len(lst)
+def average(lst):
+    total = 0
+    for num in lst:
+        total += num
+    return total / len(lst)
 
-
-print("Average:", average_of_elements(numbers))
+nums = [10, 20, 30, 40]
+print(average(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -45,12 +49,13 @@ print("\n" + "=" * 50 + "\n")
 
 print("3. Find Index of an Element")
 
-element = 40
+lst = [10, 20, 30, 40]
+element = 30
 
-if element in numbers:
-    print("Index of", element, "is:", numbers.index(element))
+if element in lst:
+    print("Index:", lst.index(element))
 else:
-    print("Element not found.")
+    print("Element not found")
 
 print("\n" + "=" * 50 + "\n")
 
@@ -62,11 +67,11 @@ print("\n" + "=" * 50 + "\n")
 print("4. Check Element Presence")
 
 
-def check_element(lst, value):
+def contains(lst, value):
     return value in lst
 
-
-print("Is 30 present?", check_element(numbers, 30))
+nums = [10, 20, 30]
+print(contains(nums, 20))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -83,8 +88,8 @@ def remove_element(lst, value):
         lst.remove(value)
     return lst
 
-
-print("Updated List:", remove_element(numbers.copy(), 20))
+nums = [10, 20, 30, 40]
+print(remove_element(nums, 20))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -97,12 +102,13 @@ print("6. Copy a List")
 
 
 def copy_list(lst):
-    return lst.copy()
+    new_list = []
+    for item in lst:
+        new_list.append(item)
+    return new_list
 
-
-copied_list = copy_list(numbers)
-
-print("Copied List:", copied_list)
+nums = [1, 2, 3]
+print(copy_list(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -118,8 +124,8 @@ def insert_element(lst, index, value):
     lst.insert(index, value)
     return lst
 
-
-print("Updated List:", insert_element(numbers.copy(), 2, 99))
+nums = [10, 20, 40]
+print(insert_element(nums, 2, 30))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -131,14 +137,13 @@ print("\n" + "=" * 50 + "\n")
 print("8. Find Minimum and Maximum")
 
 
-def find_min_max(lst):
-    return min(lst), max(lst)
+def min_max(lst):
+    minimum = min(lst)
+    maximum = max(lst)
+    return minimum, maximum
 
-
-minimum, maximum = find_min_max(numbers)
-
-print("Minimum Value:", minimum)
-print("Maximum Value:", maximum)
+nums = [5, 8, 2, 10]
+print(min_max(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -153,8 +158,8 @@ print("9. Reverse a List")
 def reverse_list(lst):
     return lst[::-1]
 
-
-print("Reversed List:", reverse_list(numbers))
+nums = [1, 2, 3, 4]
+print(reverse_list(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -167,17 +172,14 @@ print("10. Find Duplicate Elements")
 
 
 def find_duplicates(lst):
-
     duplicates = []
-
     for item in lst:
         if lst.count(item) > 1 and item not in duplicates:
             duplicates.append(item)
-
     return duplicates
 
-
-print("Duplicate Elements:", find_duplicates(numbers))
+nums = [1, 2, 3, 2, 4, 1]
+print(find_duplicates(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -190,24 +192,19 @@ print("11. Count Even and Odd Numbers")
 
 
 def count_even_odd(lst):
-
-    even_count = 0
-    odd_count = 0
+    even = 0
+    odd = 0
 
     for num in lst:
-
         if num % 2 == 0:
-            even_count += 1
+            even += 1
         else:
-            odd_count += 1
+            odd += 1
 
-    return even_count, odd_count
+    return even, odd
 
-
-even, odd = count_even_odd(numbers)
-
-print("Even Numbers Count:", even)
-print("Odd Numbers Count:", odd)
+nums = [1, 2, 3, 4, 5, 6]
+print(count_even_odd(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -218,13 +215,16 @@ print("\n" + "=" * 50 + "\n")
 
 print("12. Common Elements Between Two Lists")
 
-common_elements = []
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+
+common = []
 
 for item in list1:
     if item in list2:
-        common_elements.append(item)
+        common.append(item)
 
-print("Common Elements:", common_elements)
+print(common)
 
 print("\n" + "=" * 50 + "\n")
 
@@ -237,10 +237,14 @@ print("13. Remove Duplicates")
 
 
 def remove_duplicates(lst):
-    return list(set(lst))
+    result = []
+    for item in lst:
+        if item not in result:
+            result.append(item)
+    return result
 
-
-print("List Without Duplicates:", remove_duplicates(numbers))
+nums = [1, 2, 2, 3, 4, 4]
+print(remove_duplicates(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -253,14 +257,12 @@ print("14. Second Largest Element")
 
 
 def second_largest(lst):
+    unique = list(set(lst))
+    unique.sort()
+    return unique[-2]
 
-    unique_list = list(set(lst))
-    unique_list.sort()
-
-    return unique_list[-2]
-
-
-print("Second Largest Element:", second_largest(numbers))
+nums = [10, 20, 30, 40, 50]
+print(second_largest(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -272,11 +274,11 @@ print("\n" + "=" * 50 + "\n")
 print("15. Difference Between Max and Min")
 
 
-def difference_max_min(lst):
+def difference(lst):
     return max(lst) - min(lst)
 
-
-print("Difference:", difference_max_min(numbers))
+nums = [5, 10, 20, 30]
+print(difference(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -288,13 +290,11 @@ print("\n" + "=" * 50 + "\n")
 print("16. Check for Specific Elements")
 
 
-def check_specific_elements(lst):
+def check_values(lst):
     return 12 in lst and 23 in lst
 
-
-sample_list = [5, 12, 23, 45]
-
-print("Contains 12 and 23:", check_specific_elements(sample_list))
+nums = [5, 12, 23, 40]
+print(check_values(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -307,17 +307,14 @@ print("17. Unique Elements Only")
 
 
 def unique_elements(lst):
-
     unique = []
-
     for item in lst:
         if lst.count(item) == 1:
             unique.append(item)
-
     return unique
 
-
-print("Unique Elements:", unique_elements(numbers))
+nums = [1, 2, 2, 3, 4, 4, 5]
+print(unique_elements(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -329,17 +326,19 @@ print("\n" + "=" * 50 + "\n")
 print("18. Frequency Count")
 
 
-def frequency_count(lst):
-
-    frequency = {}
+def frequency(lst):
+    freq = {}
 
     for item in lst:
-        frequency[item] = frequency.get(item, 0) + 1
+        if item in freq:
+            freq[item] += 1
+        else:
+            freq[item] = 1
 
-    return frequency
+    return freq
 
-
-print("Frequency Count:", frequency_count(numbers))
+nums = [1, 2, 2, 3, 3, 3]
+print(frequency(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -352,26 +351,17 @@ print("19. List Sorting Without Built-in Functions")
 
 
 def bubble_sort(lst):
-
-    sorted_list = lst.copy()
-
-    n = len(sorted_list)
+    n = len(lst)
 
     for i in range(n):
-
         for j in range(0, n - i - 1):
+            if lst[j] > lst[j + 1]:
+                lst[j], lst[j + 1] = lst[j + 1], lst[j]
 
-            if sorted_list[j] > sorted_list[j + 1]:
+    return lst
 
-                sorted_list[j], sorted_list[j + 1] = (
-                    sorted_list[j + 1],
-                    sorted_list[j]
-                )
-
-    return sorted_list
-
-
-print("Sorted List:", bubble_sort(numbers))
+nums = [5, 2, 9, 1, 6]
+print(bubble_sort(nums))
 
 print("\n" + "=" * 50 + "\n")
 
@@ -383,12 +373,22 @@ print("\n" + "=" * 50 + "\n")
 print("20. Merge Two Lists Without Duplicates")
 
 
-def merge_lists_without_duplicates(lst1, lst2):
-    return list(set(lst1 + lst2))
+def merge_lists(list1, list2):
+    result = []
 
+    for item in list1:
+        if item not in result:
+            result.append(item)
 
-merged_list = merge_lists_without_duplicates(list1, list2)
+    for item in list2:
+        if item not in result:
+            result.append(item)
 
-print("Merged List:", merged_list)
+    return result
+
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+
+print(merge_lists(list1, list2))
 
 print("\n" + "=" * 50 + "\n")
